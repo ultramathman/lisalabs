@@ -1,10 +1,10 @@
-#HA InfluxDB
+# HA InfluxDB
 >**Author:** Steve Anthony (sma310@lehigh.edu) 
 > USENIX LISA Lab 2017
 
 ----------
 [TOC]
-##Lab Objective
+## Lab Objective
 In this lab you will install and configure HAproxy and influx-relay to convert the InfluxDB installation you built in the "Metrics with Influx/Grafana" lab to be replicated and load balanced, ensuring high availability.
 
 ----------
@@ -17,13 +17,13 @@ In this lab you will install and configure HAproxy and influx-relay to convert t
 
  
  ----------
-##Suggested Physical Prerequisites
+## Suggested Physical Prerequisites
 1. A computer able to run two virtual machine with 512MB of RAM and 1 core each, and a virtual machine with 256MB of RAM and 1 core. You will need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) version 4.3+ if you don't already have it.
 
 ----------
-##Let's Begin!
+## Let's Begin!
 
-###Background
+### Background
 This lab utilizes InfluxData's influx-relay project to add replication/HA to the open-source community edition of InfluxDB. The figure below, taken from their [Github page](https://github.com/influxdata/influxdb-relay), describes the logical layout of the service we will be building.
 ```asciidoc
         ┌─────────────────┐                 
@@ -57,10 +57,10 @@ This lab utilizes InfluxData's influx-relay project to add replication/HA to the
    └──────────┘      └──────────┘           
 
 ```
-###Configure Networking for VirtualBox
+### Configure Networking for VirtualBox
 VirtualBox offers several networking options. In order to make the followup lab easier we will use the same network type for both sections. This lab assumes you've made the initial network configuration changes to use the `NAT Network` network type as described in the "Metrics with InfluxDB/Grafana" lab.
 
-###Prepare to Clone the influxlab VM
+### Prepare to Clone the influxlab VM
 In order limit the amount of work we need to duplicate, we will work in the "influxlab" VM as much as possible before cloning our instance and making the final changes and connections.
 
 Before beginning, stop and disable the influxdb and telegraf services in the VM. This will help prevent data drift as we bring the second instance online.
@@ -69,7 +69,7 @@ Before beginning, stop and disable the influxdb and telegraf services in the VM.
 >UserID: student
 >Password: brainfood!
 
-####Install and Configure influx-relay
+#### Install and Configure influx-relay
 First we install Go and Git so we can build the influx-relay binary. We'll install it in /opt/influx-relay.
 ```bash
 $ sudo mkdir -p /opt/influxdb-relay/etc
@@ -111,7 +111,7 @@ WantedBy=multi-user.target
 ```
 Finally, run the `systemctl daemon-reload` command to finish adding the service.
 
-###Make and Update the Clone
+### Make and Update the Clone
 Now that we've completed the actions which would be common to both our influx-relay instances, we can clone our VM.
 
 1. Shutdown the `influxlab` VM.
@@ -134,7 +134,7 @@ output = [
 	{ name = "influxlab2", location = "http://10.0.2.3:8086/write"},
 ]
 ```
-###Configure the Load Balancer with HAProxy
+### Configure the Load Balancer with HAProxy
 Now that influx-relay is configured to send writes to both InfluxDB instances, we add HAproxy as a load balancer in order to direct traffic either to the influx-relay in case of `/write` requests or to InfluxDB directly when a client makes `/query` request.
 
 Start the `haproxy` instance and log in. Install HAproxy by running the following command:
@@ -175,7 +175,7 @@ Restart the HAproxy service `sudo systemctl restart haproxy`.
 
 >**Note:** At this point remember to enable and start the `influxdb` and `telegraf` services on the `influxlab` and `influxlab2` instances.
 
-###Update Port Forwarding in VirtualBox
+### Update Port Forwarding in VirtualBox
 Now that we have added a load balancer, we must update port forwarding rules we set in the "Metrics with InfluxDB/Grafana" lab so that requests are directly from the VM host to the `haproxy` instance.
 
 1. In the VirtualBox main window, click on `File`, then `Preferences`. 
@@ -186,14 +186,12 @@ Now that we have added a load balancer, we must update port forwarding rules we 
 
 You should be able to view that status of the HAproxy configuration from the VM host by going to `http://localhost/haproxy?stats`.
 
-###Update Grafana Configuration
+### Update Grafana Configuration
 Finally, we also must update the configuration for the `Data Source` in Grafana. 
 
 1. Log into Grafana and click the Grafana logo in the upper left.
 2. Click `Data Sources`.
 3. Change the IP of each of the `internal` and `telegraf` data sources to be the IP of the `haproxy` instance. Remember to click `Save & test` to apply the changes.
 
-##What's Next?
+## What's Next?
 Challenge yourself with one of the other labs available, or investigate sharding your data with influx-relay and HAproxy.
-
-> Written with [StackEdit](https://stackedit.io/).
