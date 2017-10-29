@@ -48,7 +48,7 @@ We configure the `NAT Network` as follows:
 2. Click on the `Network` section.
 3. Create a `NAT Network` if one does not exist. 
 
-Now change the "influxlab" VM to use the new network.
+Now change the `influxlab` VM to use the new network.
 
 1. Click on the `influxlab` VM and then click `Settings`.
 2. Click on the `Network` section and change the adapter to be `Attached to` the NATNetwork you created.
@@ -223,7 +223,7 @@ Finally we'll name and save the dashboard.
 ### Templated Host Dashboard
 Now the we have a basic understanding of creating a dashboard and graph, we can explore use of templating in Grafana. Consider a typical use case in which one desires to monitor the same data sets on multiple hosts. Using the Grafana templating engine, we can create one dashboard and change the information displayed based on the host selected.
 
-Create a new dashboard titled "Host Performance", and add a graph.
+Create a new dashboard titled `Host Performance`, and add a graph.
 
 1. Name the panel `Disk Usage`.
 2. Choose the `disk` measurement.
