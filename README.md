@@ -1,7 +1,13 @@
 # USENIX LISA Labs 2017
 ## Getting Started
-Welcome to Labs. Each of the labs linked to below has a VirtualBox VM for your conviencence. You can download the files from
+Welcome to Labs. Each of the labs has a VirtualBox VM for your conviencence. Once you've joined the `LISALABS` network, ou can download the files from [our webserver](http://service.lisalabs/virtualbox).
 
-service.lisalabs
+[Metrics with Influx/Grafana](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_grafana.md)
 
-/Library/webserver/documents  
+[HA InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)
+
+[Docker Basics](https://github.com/ultramathman/lisalabs17/blob/master/docker.md)
+
+
+
+
