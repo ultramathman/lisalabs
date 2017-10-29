@@ -259,4 +259,4 @@ Feel free to play around adding additional graphs or types of panels if you’d 
 
 **Remember to save your dashboard!**
 ## What's Next?
-We have a few options for what to do next.  You can try “LISA USENIX Lab 2017 - HA with InfluxDB”, you can experiment with your existing setup and build additional graphs or dashboards, or you can explore additional ways to add data to InfluxDB. If you create something you’d like to share, see a lab coordinator for assistance merging your work into the projected rotation.
+We have a few options for what to do next.  You can try “[LISA USENIX Lab 2017 - HA with InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)”, you can experiment with your existing setup and build additional graphs or dashboards, or you can explore additional ways to add data to InfluxDB. If you create something you’d like to share, see a lab coordinator for assistance merging your work into the projected rotation.

@@ -186,4 +186,4 @@ Likewise add a rule to forward port `2222` to port `2222` for SSH.
 At this point able to visit `http://localhost:8080` and see the webpage running inside our Docker container. Using an SSH client on the VM host on port `2222` we can also log into our container to make further changes. Congratulations! 
 
 ## What's Next?
-We have a few suggestions for what to do next.  You can try to reimplement “LISA USENIX Lab 2017 - HA InfluxDB” using Docker containers for the InfluxDB, influx-relay, and HAproxy instances, apply this same idea to one of the other labs, or start to investigate orchestration and management of Docker containers.
+We have a few suggestions for what to do next.  You can try to reimplement “[LISA USENIX Lab 2017 - HA InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)” using Docker containers for the InfluxDB, influx-relay, and HAproxy instances, apply this same idea to one of the other labs, or start to investigate orchestration and management of Docker containers.
