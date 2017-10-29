@@ -4,9 +4,22 @@
 > USENIX LISA Lab 2017
 
 ----------
-:toc:
-:toc-placement!:
-toc::[]
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- HA InfluxDB
+  - [Lab Objective](#lab-objective)
+  - [Suggested Knowledge Prerequisites](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#suggested-knowledge-prerequisites)
+  - [Suggested Physical Prerequisites](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#suggested-physical-prerequisites)
+  - [Let's Begin!](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#lets-begin)
+    - [Background](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#background)
+    - [Configure Networking for VirtualBox](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#configure-networking-for-virtualbox)
+    - [Prepare to Clone the influxlab VM](#)
+    - [Install and Configure influx-relay](#)
+    - [Make and Update the Clone](#)
+    - [Configure the Load Balancer with HAProxy](#)
+    - [Update Port Forwarding in VirtualBox](#)
+    - [Update Grafana Configuration](#)
+    - [What's Next?](#)
 ## Lab Objective
 In this lab you will install and configure HAproxy and influx-relay to convert the InfluxDB installation you built in the "Metrics with Influx/Grafana" lab to be replicated and load balanced, ensuring high availability.
 
