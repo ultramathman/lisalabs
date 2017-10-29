@@ -1,10 +1,10 @@
-#Metrics with Influx/Grafana
+# Metrics with Influx/Grafana
 >**Author:** Steve Anthony (sma310@lehigh.edu) 
 >USENIX LISA Lab 2017
 
 ----------
 [TOC]
-##Lab Objective
+## Lab Objective
 In this lab you will install and configure a basic [InfluxDB](https://docs.influxdata.com/influxdb/v1.3/), [Telegraf](https://docs.influxdata.com/telegraf/v1.3), and [Grafana](http://docs.grafana.org/) installation, enabling you to collect metrics from the host machine and track internal performance of InfluxDB. 
 
 You will also learn how to add InfluxDB as a data source in Grafana, and create basic graphs and dashboards. Finally, you'll take your system dashboard and use the Grafana templating engine to abstract the graphs so that you can use them with multiple systems.
@@ -17,13 +17,13 @@ You will also learn how to add InfluxDB as a data source in Grafana, and create 
  - Some understanding of the basics of a SQL query language may be helpful, eg. basic SELECT statements.
  
  ----------
-##Suggested Physical Prerequisites
+## Suggested Physical Prerequisites
 1. A computer able to run a virtual machine with 512MB of RAM and 1 core. You will need to install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) version 4.3+ if you don't already have it.
 
 ----------
-##Let's Begin!
+## Let's Begin!
 
-###Configure Networking for VirtualBox
+### Configure Networking for VirtualBox
 VirtualBox offers several networking options. In order to make the followup lab easier we will use the same network type for both sections. This will require us to make some initial network configuration changes to use the "NAT Network" network type.
 
 > **Note:** VirtualBox offers two similarly named network types, "NAT" and "NAT Network".  The default "NAT" network type allows VMs to access the Internet, but not address other VMs. The "NAT Network" network option we're using will allow our VMs to connect both to the Internet and be addressable by other VMs we'll run in the "HA with InfluxDB" followup lab.
@@ -39,7 +39,7 @@ Now change the "influxlab" VM to use the new network.
 1. Click on the `influxlab` VM and then click `Settings`.
 2. Click on the `Network` section and change the adapter to be `Attached to` the NATNetwork you created.
 
-###Install and Configure InfluxDB and the Telegraf Collector
+### Install and Configure InfluxDB and the Telegraf Collector
 
 Launch the "influxlab" VM and log in. The account has sudo privileges.
  
@@ -115,7 +115,7 @@ system
 ```
 For more information on the InfluxDB query language, see their [documentation](https://docs.influxdata.com/influxdb/v1.3/query_language/).
 
-###Install and Configure Grafana
+### Install and Configure Grafana
 As we did with InfluxDB, begin by adding the Grafana repository.
 ```bash
 $ curl https://packagecloud.io/gpg.key | sudo apt-key add -
@@ -134,7 +134,7 @@ $ sudo systemctl start grafana-server
 ```
 The Grafana service will listen for requests on port 3000. In a production environment, one might consider using Apache or Nginx as a reverse proxy. We omit this configuration as we will be forwarding the port to the VM host in this lab.
 
-###Enable Access from the VM Host
+### Enable Access from the VM Host
 To enable access to the Grafana webpage from the VM host (ie. your computer) we need to forward a port to VirtualBox which will map it onto the VM port 3000. This is configured as follows:
 
 1. In the VirtualBox main window, click on `File`, then `Preferences`. 
@@ -143,7 +143,7 @@ To enable access to the Grafana webpage from the VM host (ie. your computer) we 
 4. Click `Port Forwarding`.
 5. Add a rule to forward host port 8080 (IP address blank) to guest port 3000 (enter the IP of the influxlab host).
 
-###Add InfluxDB as a Grafana Data Source
+### Add InfluxDB as a Grafana Data Source
 You should now be able to go to http://localhost:8080 and log into Grafana.
 
 >**Credentials:**
@@ -160,7 +160,7 @@ Before we can create a dashboard and graphs, we must add our InfluxDB instance a
 
 Create another datasource for the `_internal` database called `internal`. Now we can create dashboards.
 
-###InfluxDB Series Monitoring Dashboard
+### InfluxDB Series Monitoring Dashboard
 Now we'll create a new dashboard with a single graph to track the number of series in the Influx database. The *series cardinality* is the number of unique database, measurement, and tag set combinations in an InfluxDB instance.
 
 This number is what we use in a production instance to determine [what size hardware is needed](https://docs.influxdata.com/influxdb/v1.3/guides/hardware_sizing/#general-hardware-guidelines-for-a-single-node) to run reliably. 
@@ -198,7 +198,7 @@ Finally we'll name and save the dashboard.
 4. Click the `X` to return to the dashboard.
 5. Save the dashboard by selecting the `save` icon at the top of the page.
 
-###Templated Host Dashboard
+### Templated Host Dashboard
 Now the we have a basic understanding of creating a dashboard and graph, we can explore use of templating in Grafana. Consider a typical use case in which one desires to monitor the same data sets on multiple hosts. Using the Grafana templating engine, we can create one dashboard and change the information displayed based on the host selected.
 
 Create a new dashboard titled "Host Performance", and add a graph.
@@ -233,7 +233,5 @@ Close the graph editing options. You should now be able to change the path drop 
 Feel free to play around adding additional graphs or types of panels if you’d like. Start by clicking `+Add Row` below your existing graph on the dashboard. 
 
 **Remember to save your dashboard!**
-##What's Next?
+## What's Next?
 We have a few options for what to do next.  You can try “LISA USENIX Lab 2017 - HA with InfluxDB”, you can experiment with your existing setup and build additional graphs or dashboards, or you can explore additional ways to add data to InfluxDB. If you create something you’d like to share, see a lab coordinator for assistance merging your work into the projected rotation.
-
-> Written with [StackEdit](https://stackedit.io/).
