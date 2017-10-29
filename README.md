@@ -4,11 +4,11 @@ Welcome to Labs. Each of the labs has a VirtualBox VM for your conviencence. Onc
 
 The directions for this lab set are available at:
 
-[Metrics with Influx/Grafana](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_grafana.md)
+- [Metrics with Influx/Grafana](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_grafana.md)
 
-[HA InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)
+- [HA InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)
 
-[Docker Basics](https://github.com/ultramathman/lisalabs17/blob/master/docker.md)
+- [Docker Basics](https://github.com/ultramathman/lisalabs17/blob/master/docker.md)
 
 
 
