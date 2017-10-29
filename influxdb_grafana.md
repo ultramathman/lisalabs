@@ -163,15 +163,21 @@ To enable access to the Grafana webpage from the VM host (ie. your computer) we 
 You should now be able to go to http://localhost:8080 and log into Grafana.
 
 >**Credentials:**
+>
 >Username: admin
+>
 >Password: admin
 
 Before we can create a dashboard and graphs, we must add our InfluxDB instance as a Grafana datasource. Click `Add data source` to do so and enter the following:
 
 >Name: telegraf (check default)
+>
 >Type: influx
+>
 >URL: http://localhost:8086
+>
 >Database: telegraf
+>
 >Min time interval: 60s
 
 Create another datasource for the `_internal` database called `internal`. Now we can create dashboards.
