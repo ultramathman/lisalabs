@@ -1,24 +1,24 @@
 # Docker Basics
 >**Author:** Steve Anthony (sma310@lehigh.edu)
+>
 >USENIX LISA Lab 2017
 
 ----------
 **Table of Contents**
 
-- Docker Basics
-  - [Lab Objective](#lab-objective)
-  - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
-  - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
-  - [Let's Begin!](#lets-begin)
-    - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
-    - [Installing Docker](#installing-docker)
-    - [Getting a Container](#getting-a-container)
-    - [Start the Container Interactively](#start-the-container-interactively)
-    - [View Container Information](#view-container-information)
-    - [Create Persistent Storage](#create-persistent-storage)
-    - [Run the Container with Storage and Network](#run-the-container-with-storage-and-network)
-    - [Enable Access from the VM Host](#enable-access-from-the-vm-host)
-  - [What's Next?](#whats-next)
+- [Lab Objective](#lab-objective)
+- [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
+- [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
+- [Let's Begin!](#lets-begin)
+  - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
+  - [Installing Docker](#installing-docker)
+  - [Getting a Container](#getting-a-container)
+  - [Start the Container Interactively](#start-the-container-interactively)
+  - [View Container Information](#view-container-information)
+  - [Create Persistent Storage](#create-persistent-storage)
+  - [Run the Container with Storage and Network](#run-the-container-with-storage-and-network)
+  - [Enable Access from the VM Host](#enable-access-from-the-vm-host)
+- [What's Next?](#whats-next)
 ## Lab Objective
 In this lab you will learn how to install Docker, find and download a container, connect and disconnect from that container, and attach networking and storage.
 
