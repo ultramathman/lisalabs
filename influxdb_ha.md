@@ -4,7 +4,7 @@
 > USENIX LISA Lab 2017
 
 ----------
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**
 
 - HA InfluxDB
   - [Lab Objective](#lab-objective)
