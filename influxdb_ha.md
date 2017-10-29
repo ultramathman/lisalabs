@@ -8,18 +8,18 @@
 
 - HA InfluxDB
   - [Lab Objective](#lab-objective)
-  - [Suggested Knowledge Prerequisites](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#suggested-knowledge-prerequisites)
-  - [Suggested Physical Prerequisites](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#suggested-physical-prerequisites)
-  - [Let's Begin!](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#lets-begin)
-    - [Background](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#background)
-    - [Configure Networking for VirtualBox](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md#configure-networking-for-virtualbox)
-    - [Prepare to Clone the influxlab VM](#)
-    - [Install and Configure influx-relay](#)
-    - [Make and Update the Clone](#)
-    - [Configure the Load Balancer with HAProxy](#)
-    - [Update Port Forwarding in VirtualBox](#)
-    - [Update Grafana Configuration](#)
-    - [What's Next?](#)
+  - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
+  - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
+  - [Let's Begin!](#lets-begin)
+    - [Background](#background)
+    - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
+    - [Prepare to Clone the influxlab VM](#prepare-to-clone-the-influxlab-vm)
+    - [Install and Configure influx-relay](#install-and-configure-influx-relay)
+    - [Make and Update the Clone](#make-and-update-the-clone)
+    - [Configure the Load Balancer with HAProxy](#configure-the-load-balancer-with-haproxy)
+    - [Update Port Forwarding in VirtualBox](#update-port-forwarding-in-virtualbox)
+    - [Update Grafana Configuration](#update-grafana-configuration)
+    - [What's Next?](#whats-next)
 ## Lab Objective
 In this lab you will install and configure HAproxy and influx-relay to convert the InfluxDB installation you built in the "Metrics with Influx/Grafana" lab to be replicated and load balanced, ensuring high availability.
 
