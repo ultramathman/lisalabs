@@ -1,5 +1,6 @@
 # HA InfluxDB
 > **Author:** Steve Anthony (sma310@lehigh.edu) 
+>
 > USENIX LISA Lab 2017
 
 ----------
