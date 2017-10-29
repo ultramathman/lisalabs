@@ -1,23 +1,24 @@
 # Metrics with Influx/Grafana
->**Author:** Steve Anthony (sma310@lehigh.edu) 
->USENIX LISA Lab 2017
+> **Author:** Steve Anthony (sma310@lehigh.edu) 
+>
+> USENIX LISA Lab 2017
 
 ----------
 **Table of Contents**
 
-- [Metrics with Influx/Grafana](#)
-  - [Lab Objective](#)
-  - [Suggested Knowledge Prerequisites](#)
-  - [Suggested Physical Prerequisites](#)
-  - [Let's Begin!](#)
-    - [Configure Networking for VirtualBox](#)
-      - [Install and Configure InfluxDB and the Telegraf Collector](#)
-      	- [Install and Configure Grafana](#)
-	  - [Enable Access from the VM Host](#)
-	    - [Add InfluxDB as a Grafana Data Source](#)
-	      - [InfluxDB Series Monitoring Dashboard](#)
-	      	- [Templated Host Dashboard](#)
-		- [What's Next?](#)
+- Metrics with Influx/Grafana
+  - [Lab Objective](#lab-objective)
+  - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
+  - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
+  - [Let's Begin!](#lets-begin)
+    - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
+    - [Install and Configure InfluxDB and the Telegraf Collector](#install-and-configure-influxdb-and-the-telegraf-collector)
+    - [Install and Configure Grafana](#install-and-configure-grafana)
+    - [Enable Access from the VM Host](#enable-access-from-the-vm-host)
+    - [Add InfluxDB as a Grafana Data Source](#add-influxdb-as-a-grafana-data-source)
+    - [InfluxDB Series Monitoring Dashboard](#influxdb-series-monitoring-dashboard)
+    - [Templated Host Dashboard](#templated-host-dashboard)
+  - [What's Next?](#whats-next)
 ## Lab Objective
 In this lab you will install and configure a basic [InfluxDB](https://docs.influxdata.com/influxdb/v1.3/), [Telegraf](https://docs.influxdata.com/telegraf/v1.3), and [Grafana](http://docs.grafana.org/) installation, enabling you to collect metrics from the host machine and track internal performance of InfluxDB. 
 
@@ -45,7 +46,7 @@ VirtualBox offers several networking options. In order to make the followup lab 
 We configure the `NAT Network` as follows:
 
 1. In the VirtualBox main window, click on `File`, then `Preferences`. 
-2.  Click on the `Network` section.
+2. Click on the `Network` section.
 3. Create a `NAT Network` if one does not exist. 
 
 Now change the "influxlab" VM to use the new network.
@@ -58,7 +59,9 @@ Now change the "influxlab" VM to use the new network.
 Launch the "influxlab" VM and log in. The account has sudo privileges.
  
 > **Credentials:**
+>
 > Username: student
+>
 > Password: brainfood!
 
 Next, add the InfluxData key and repository.
