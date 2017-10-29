@@ -240,8 +240,11 @@ At this point you should see lines for `total`, `used`, and `free`. Now we'll ab
 2. Click `+New` to add a new variable.
 
 > Name: host
+>
 > Data source: telegraf
+>
 > Refresh: On Dashboard Load
+>
 > Query: SHOW TAG VALUES FROM "system" WITH KEY = "host"
 
 Click `Add` to finish adding the variable, then repeat the process to add a `path` variable. This time, select the `Multi-value` and `Include All` options. Finally, click he `X` to the right of `Templating` to close the Templating menu.
