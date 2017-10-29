@@ -3,7 +3,22 @@
 >USENIX LISA Lab 2017
 
 ----------
-[TOC]
+**Table of Contents**
+
+- [Docker Basics](#)
+  - [Lab Objective](#)
+  - [Suggested Knowledge Prerequisites](#)
+  - [Suggested Physical Prerequisites](#)
+  - [Let's Begin!](#)
+    - [Configure Networking for VirtualBox](#)
+      - [Installing Docker](#)
+      	- [Getting a Container](#)
+	  - [Start the Container Interactively](#)
+	    - [View Container Information](#)
+	      - [Create Persistent Storage](#)
+	      	- [Run the Container with Storage and Network](#)
+		  - [Enable Access from the VM Host](#)
+		  - [What's Next?](#)
 ## Lab Objective
 In this lab you will learn how to install Docker, find and download a container, connect and disconnect from that container, and attach networking and storage.
 
