@@ -25,7 +25,7 @@ In this lab you will install and configure HAproxy and influx-relay to convert t
 ----------
 ## Suggested Knowledge Prerequisites
 
- It is highly recommended to take the lab “LISA USENIX Lab 2017 - Metrics with InfluxDB/Grafana” before taking this lab.  If you have already reviewed or completed this lab then you will need the following.
+ It is highly recommended to take the lab “[LISA USENIX Lab 2017 - Metrics with InfluxDB/Grafana](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_grafana.md)” before taking this lab.  If you have already reviewed or completed this lab then you will need the following.
  
  - Familiarity with Linux and working from a command line environment.
  - Familiarity with [VirtualBox](https://www.virtualbox.org/wiki/Downloads) helpful, but not required.
