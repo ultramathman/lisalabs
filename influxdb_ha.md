@@ -4,7 +4,9 @@
 > USENIX LISA Lab 2017
 
 ----------
-[TOC]
+:toc:
+:toc-placement!:
+toc::[]
 ## Lab Objective
 In this lab you will install and configure HAproxy and influx-relay to convert the InfluxDB installation you built in the "Metrics with Influx/Grafana" lab to be replicated and load balanced, ensuring high availability.
 
