@@ -6,19 +6,18 @@
 ----------
 **Table of Contents**
 
-- Metrics with Influx/Grafana
-  - [Lab Objective](#lab-objective)
-  - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
-  - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
-  - [Let's Begin!](#lets-begin)
-    - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
-    - [Install and Configure InfluxDB and the Telegraf Collector](#install-and-configure-influxdb-and-the-telegraf-collector)
-    - [Install and Configure Grafana](#install-and-configure-grafana)
-    - [Enable Access from the VM Host](#enable-access-from-the-vm-host)
-    - [Add InfluxDB as a Grafana Data Source](#add-influxdb-as-a-grafana-data-source)
-    - [InfluxDB Series Monitoring Dashboard](#influxdb-series-monitoring-dashboard)
-    - [Templated Host Dashboard](#templated-host-dashboard)
-  - [What's Next?](#whats-next)
+- [Lab Objective](#lab-objective)
+- [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
+- [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
+- [Let's Begin!](#lets-begin)
+  - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
+  - [Install and Configure InfluxDB and the Telegraf Collector](#install-and-cofigure-influxdb-and-the-telegraf-collector)
+  - [Install and Configure Grafana](#install-and-configure-grafana)
+  - [Enable Access from the VM Host](#enable-access-from-the-vm-host)
+  - [Add InfluxDB as a Grafana Data Source](#add-influxdb-as-a-grafana-data-source)
+  - [InfluxDB Series Monitoring Dashboard](#influxdb-series-monitoring-dashboard)
+  - [Templated Host Dashboard](#templated-host-dashboard)
+- [What's Next?](#whats-next)
 ## Lab Objective
 In this lab you will install and configure a basic [InfluxDB](https://docs.influxdata.com/influxdb/v1.3/), [Telegraf](https://docs.influxdata.com/telegraf/v1.3), and [Grafana](http://docs.grafana.org/) installation, enabling you to collect metrics from the host machine and track internal performance of InfluxDB. 
 
