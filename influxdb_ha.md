@@ -19,7 +19,7 @@
     - [Configure the Load Balancer with HAProxy](#configure-the-load-balancer-with-haproxy)
     - [Update Port Forwarding in VirtualBox](#update-port-forwarding-in-virtualbox)
     - [Update Grafana Configuration](#update-grafana-configuration)
-    - [What's Next?](#whats-next)
+  - [What's Next?](#whats-next)
 ## Lab Objective
 In this lab you will install and configure HAproxy and influx-relay to convert the InfluxDB installation you built in the "Metrics with Influx/Grafana" lab to be replicated and load balanced, ensuring high availability.
 
