@@ -3,7 +3,21 @@
 >USENIX LISA Lab 2017
 
 ----------
-[TOC]
+**Table of Contents**
+
+- [Metrics with Influx/Grafana](#)
+  - [Lab Objective](#)
+  - [Suggested Knowledge Prerequisites](#)
+  - [Suggested Physical Prerequisites](#)
+  - [Let's Begin!](#)
+    - [Configure Networking for VirtualBox](#)
+      - [Install and Configure InfluxDB and the Telegraf Collector](#)
+      	- [Install and Configure Grafana](#)
+	  - [Enable Access from the VM Host](#)
+	    - [Add InfluxDB as a Grafana Data Source](#)
+	      - [InfluxDB Series Monitoring Dashboard](#)
+	      	- [Templated Host Dashboard](#)
+		- [What's Next?](#)
 ## Lab Objective
 In this lab you will install and configure a basic [InfluxDB](https://docs.influxdata.com/influxdb/v1.3/), [Telegraf](https://docs.influxdata.com/telegraf/v1.3), and [Grafana](http://docs.grafana.org/) installation, enabling you to collect metrics from the host machine and track internal performance of InfluxDB. 
 
