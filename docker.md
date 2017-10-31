@@ -3,7 +3,7 @@
 >
 >USENIX LISA Lab 2017
 >
->Feedback/Problems? Email the author or open an issue! Pull requests also welcome.
+>Feedback/Problems? Email the author or [open an issue](https://github.com/ultramathman/lisalabs17/issues)! Pull requests also welcome.
 
 ----------
 **Table of Contents**
