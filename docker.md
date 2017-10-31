@@ -2,6 +2,8 @@
 >**Author:** Steve Anthony (sma310@lehigh.edu)
 >
 >USENIX LISA Lab 2017
+>
+>Feedback/Problems? Email the author or open an issue! Pull requests also welcome.
 
 ----------
 **Table of Contents**
