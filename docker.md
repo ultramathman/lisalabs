@@ -172,3 +172,5 @@ At this point able to visit `http://localhost:8080` and see the webpage running 
 
 ## What's Next?
 We have a few suggestions for what to do next.  You can try to reimplement “[LISA USENIX Lab 2017 - HA InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)” using Docker containers for the InfluxDB, influx-relay, and HAproxy instances, apply this same idea to one of the other labs, or start to investigate orchestration and management of Docker containers.
+
+If you've completed the IPv6 lab, reimplementing that in Docker is a fun puzzle and introduction to networking and IPv6 in Docker. For hints, see a person with an orange badge.
