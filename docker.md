@@ -168,7 +168,7 @@ root@46ce91515e8f:/#
 
 >**Note:** Since this is a new container, we'll need to update apt and install `apache2` and `openssh-server` again. Additionally install an editor, eg. `emacs25-nox` or `vim`.
 
-Set a root password in the container with `passwd` and edit `/etc/ssh/sshd_config`, changing `PermitRootLogin` to `yes` so we can SSH into the container. 
+Set a root password in the container with `passwd` and edit `/etc/ssh/sshd_config`, changing `PermitRootLogin` to `yes` so we can SSH into the container. Restart the services so the changes take effect, eg. `systemctl restart sshd`, `systemctl restart apache2`.
 
 Feel free to replace `/var/www/html/index.html` with your own content as well.
 
