@@ -12,7 +12,6 @@
 - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
 - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
 - [Let's Begin!](#lets-begin)
-  - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
   - [Install and Configure InfluxDB and the Telegraf Collector](#install-and-cofigure-influxdb-and-the-telegraf-collector)
   - [Install and Configure Grafana](#install-and-configure-grafana)
   - [Enable Access from the VM Host](#enable-access-from-the-vm-host)
@@ -38,22 +37,6 @@ You will also learn how to add InfluxDB as a data source in Grafana, and create 
 
 ----------
 ## Let's Begin!
-
-### Configure Networking for VirtualBox
-VirtualBox offers several networking options. In order to make the followup lab easier we will use the same network type for both sections. This will require us to make some initial network configuration changes to use the `NAT Network` network type.
-
-> **Note:** VirtualBox offers two similarly named network types, `NAT` and `NAT Network`.  The default `NAT` network type allows VMs to access the Internet, but not address other VMs. The `NAT Network` network option we're using will allow our VMs to connect both to the Internet and be addressable by other VMs we'll run in the "[HA with InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)" followup lab.
-
-We configure the `NAT Network` as follows:
-
-1. In the VirtualBox main window, click on `File`, then `Preferences`. 
-2. Click on the `Network` section.
-3. Create a `NAT Network` if one does not exist. 
-
-Now change the `influxlab` VM to use the new network.
-
-1. Click on the `influxlab` VM and then click `Settings`.
-2. Click on the `Network` section and change the adapter to be `Attached to` the NATNetwork you created.
 
 ### Install and Configure InfluxDB and the Telegraf Collector
 

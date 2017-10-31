@@ -12,7 +12,6 @@
 - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
 - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
 - [Let's Begin!](#lets-begin)
-  - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
   - [Installing Docker](#installing-docker)
   - [Getting a Container](#getting-a-container)
   - [Start the Container Interactively](#start-the-container-interactively)
@@ -37,22 +36,6 @@ In this lab you will learn how to install Docker, find and download a container,
 
 ----------
 ## Let's Begin!
-
-### Configure Networking for VirtualBox
-VirtualBox offers several networking options. In order to make the Influx labs easier we will use the same network type for both sections. This will require us to make some initial network configuration changes to use the "NAT Network" network type.
-
-> **Note:** VirtualBox offers two similarly named network types, "NAT" and "NAT Network".  The default "NAT" network type allows VMs to access the Internet, but not address other VMs. The "NAT Network" network option we're using will allow our VMs to connect both to the Internet and be addressable by other VMs we'll run in the "HA with InfluxDB" followup lab.
-
-We configure the `NAT Network` as follows:
-
-1. In the VirtualBox main window, click on `File`, then `Preferences`. 
-2.  Click on the `Network` section.
-3. Create a `NAT Network` if one does not exist. 
-
-Now change the `docker` VM to use the new network.
-
-1. Click on the `docker` VM and then click `Settings`.
-2. Click on the `Network` section and change the adapter to be `Attached to` the NATNetwork you created.
 
 ### Installing Docker
 Launch the "docker" VM and log in. The account has sudo privileges.

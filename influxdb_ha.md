@@ -13,7 +13,6 @@
 - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
 - [Let's Begin!](#lets-begin)
   - [Background](#background)
-  - [Configure Networking for VirtualBox](#configure-networking-for-virtualbox)
   - [Prepare to Clone the influxlab VM](#prepare-to-clone-the-influxlab-vm)
   - [Install and Configure influx-relay](#install-and-configure-influx-relay)
   - [Make and Update the Clone](#make-and-update-the-clone)
@@ -74,8 +73,6 @@ This lab utilizes InfluxData's influx-relay project to add replication/HA to the
    └──────────┘      └──────────┘           
 
 ```
-### Configure Networking for VirtualBox
-VirtualBox offers several networking options. In order to make the followup lab easier we will use the same network type for both sections. This lab assumes you've made the initial network configuration changes to use the `NAT Network` network type as described in the "Metrics with InfluxDB/Grafana" lab.
 
 ### Prepare to Clone the influxlab VM
 In order limit the amount of work we need to duplicate, we will work in the "influxlab" VM as much as possible before cloning our instance and making the final changes and connections.
