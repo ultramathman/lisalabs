@@ -11,7 +11,7 @@ Once you've downloaded the zip file containing the VirtualBox files for the lab 
 Next, open the LABNAME.vbox file, eg. docker.vbox and it will open VirtualBox and import the VM for you. You can start the VM by selecting it and then clicking `Start`.
 
 ### Configure Networking for VirtualBox
-VirtualBox offers several networking options. In order to make the followup lab easier we will use the same network type for both sections. This will require us to make some initial network configuration changes to use the `NAT Network` network type.
+VirtualBox offers several networking options. In order to make the followup lab easier we will use the same network type for all sections. This will require us to make some initial network configuration changes to use the `NAT Network` network type.
 
 > **Note:** VirtualBox offers two similarly named network types, `NAT` and `NAT Network`.  The default `NAT` network type allows VMs to access the Internet, but not address other VMs. The `NAT Network` network option we're using will allow our VMs to connect both to the Internet and be addressable by other VMs we'll run in the "[HA with InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)" lab.
 
