@@ -46,7 +46,7 @@ Launch the `influxlab` VM and log in. The account has sudo privileges.
 >
 > Username: student
 >
-> Password: brainfood. or brainfood!
+> Password: brainfood!
 
 Next, add the InfluxData key and repository.
 ```bash

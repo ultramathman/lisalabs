@@ -83,7 +83,7 @@ Before beginning, stop and disable the influxdb and telegraf services in the VM.
 >
 > UserID: student
 >
-> Password: brainfood. or brainfood!
+> Password: brainfood!
 
 #### Install and Configure influx-relay
 First we install Go and Git so we can build the influx-relay binary. We'll install it in /opt/influx-relay.
