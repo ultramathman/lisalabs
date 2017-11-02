@@ -44,7 +44,7 @@ Launch the "docker" VM and log in. The account has sudo privileges.
 >
 > Username: student
 >
-> Password: brainfood.
+> Password: brainfood. or brainfood!
 
 Install the prerequisite software:
 ```bash
