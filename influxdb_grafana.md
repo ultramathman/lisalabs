@@ -215,9 +215,10 @@ Create a new dashboard titled `Host Performance`, and add a graph.
 3. Click the `+` next to the WHERE condition and add `host = influxlab`.
 4. Repeat and add `path = /`.
 5. Select the `free` field and change to use the `last()` selector.
-6. Click the `+` next to `last()` and choose `Fields` -> `field`.
-7. Repeat for `total` and `used` fields.
-8. Change `ALIAS BY` to `$tag_host - $tag_path`.
+6. Click the `+` next to `last()` and choose `Aliasing` -> alias. Alias with the field name.
+7. Click the `+` next to `last()` and choose `Fields` -> `field`.
+8. Repeat for `total` and `used` fields.
+9. Change `ALIAS BY` to `$tag_host - $tag_path` `$col`.
 
 At this point you should see lines for `total`, `used`, and `free`. Now we'll abstract these selections after defining template variables.
 
