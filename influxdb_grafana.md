@@ -218,7 +218,7 @@ Create a new dashboard titled `Host Performance`, and add a graph.
 6. Click the `+` next to `last()` and choose `Aliasing` -> alias. Alias with the field name.
 7. Click the `+` next to `last()` and choose `Fields` -> `field`.
 8. Repeat for `total` and `used` fields.
-9. Change `ALIAS BY` to `$tag_host - $tag_path` `$col`.
+9. Change `ALIAS BY` to `$tag_host - $tag_path $col`.
 
 At this point you should see lines for `total`, `used`, and `free`. Now we'll abstract these selections after defining template variables.
 
