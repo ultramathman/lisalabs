@@ -1,9 +1,9 @@
 # Metrics with Influx/Grafana
 > **Author:** Steve Anthony (sma310@lehigh.edu) 
 >
-> USENIX LISA Lab 2017
+> USENIX LISA Lab 2018
 >
->Feedback/Problems? Email the author or [open an issue](https://github.com/ultramathman/lisalabs17/issues)! Pull requests also welcome.
+>Feedback/Problems? Email the author or [open an issue](https://github.com/ultramathman/lisalabs/issues)! Pull requests also welcome.
 
 ----------
 **Table of Contents**
@@ -20,7 +20,7 @@
   - [Templated Host Dashboard](#templated-host-dashboard)
 - [What's Next?](#whats-next)
 ## Lab Objective
-In this lab you will install and configure a basic [InfluxDB](https://docs.influxdata.com/influxdb/v1.3/), [Telegraf](https://docs.influxdata.com/telegraf/v1.3), and [Grafana](http://docs.grafana.org/) installation, enabling you to collect metrics from the host machine and track internal performance of InfluxDB. 
+In this lab you will install and configure a basic [InfluxDB](https://docs.influxdata.com/influxdb/v1.6/), [Telegraf](https://docs.influxdata.com/telegraf/v1.8), and [Grafana](http://docs.grafana.org/) installation, enabling you to collect metrics from the host machine and track internal performance of InfluxDB. 
 
 You will also learn how to add InfluxDB as a data source in Grafana, and create basic graphs and dashboards. Finally, you'll take your system dashboard and use the Grafana templating engine to abstract the graphs so that you can use them with multiple systems.
 
@@ -55,7 +55,7 @@ $ sudo -s
 cat > /etc/apt/sources.list.d/influxdb.list
 deb https://repos.influxdata.com/debian stretch stable
 ```
-> **Note:** The InfluxData website provides links to the respective .deb files for their offering, but the repository information isn't well published. We elect to use the repository so that feature and security updates may be applied more easily.
+> **Note:** The InfluxData website provides links to the respective .deb files for their offering, but we elect to use the repository so that feature and security updates may be applied more easily.
 
 Now, update apt and install, enable, and start InfluxDB.
 ```bash
@@ -71,16 +71,16 @@ $ sudo apt-get install telegraf
 
 By default, Telegraf will collect the following on a 10 second interval:
 
- - [CPU information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/CPU_README.md)
- - [Disk information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/DISK_README.md#disk-input-plugin)
- - [Disk IO information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/DISK_README.md#diskio-input-plugin)
- - [Kernel information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/KERNEL_README.md)
- - [Memory information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/MEM_README.md)
- - [Process information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/PROCESSES_README.md)
- - [Swap information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/MEM_README.md)
- - [System information](https://github.com/influxdata/telegraf/blob/release-1.4/plugins/inputs/system/SYSTEM_README.md)
+ - [CPU information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/CPU_README.md)
+ - [Disk information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/DISK_README.md#disk-input-plugin)
+ - [Disk IO information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/DISK_README.md#diskio-input-plugin)
+ - [Kernel information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/KERNEL_README.md)
+ - [Memory information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/MEM_README.md)
+ - [Process information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/PROCESSES_README.md)
+ - [Swap information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/MEM_README.md)
+ - [System information](https://github.com/influxdata/telegraf/blob/release-1.7/plugins/inputs/system/SYSTEM_README.md)
 
-There are many [other plugins](https://docs.influxdata.com/telegraf/v1.4/inputs/) we can add, depending on the software installed and what information we are looking to collect. We'll create a configuration file in **/etc/telegraf/telegraf.d/custom.conf** in order to adjust the interval to collect and flush every 60 seconds and to add the network statistics plugin.
+There are many [other plugins](https://docs.influxdata.com/telegraf/v1.8/plugins/inputs/) we can add, depending on the software installed and what information we are looking to collect. We'll create a configuration file in **/etc/telegraf/telegraf.d/custom.conf** in order to adjust the interval to collect and flush every 60 seconds and to add the network statistics plugin.
 
 ```asciidoc
 [agent]
@@ -114,17 +114,15 @@ processes
 swap
 system
 ```
-For more information on the InfluxDB query language, see their [documentation](https://docs.influxdata.com/influxdb/v1.3/query_language/).
+For more information on the InfluxDB query language, see their [documentation](https://docs.influxdata.com/influxdb/v1.6/query_language/).
 
 ### Install and Configure Grafana
 As we did with InfluxDB, begin by adding the Grafana repository.
 ```bash
 $ curl https://packagecloud.io/gpg.key | sudo apt-key add -
 $ sudo cat > /etc/apt/sources.list.d/grafana.list
-deb https://packagecloud.io/grafana/stable/debian/ jessie main
+deb https://packagecloud.io/grafana/stable/debian/ stretch main
 ```
-
-> **Note:** The Grafana directions specify that we should use the Jessie repository even though we are running Debian Stretch. 
 
 Now we install the package, then enable and start the service.
 ```bash
@@ -170,7 +168,7 @@ Create another datasource for the `_internal` database called `internal`. Now we
 ### InfluxDB Series Monitoring Dashboard
 Now we'll create a new dashboard with a single graph to track the number of series in the Influx database. The *series cardinality* is the number of unique database, measurement, and tag set combinations in an InfluxDB instance.
 
-This number is what we use in a production instance to determine [what size hardware is needed](https://docs.influxdata.com/influxdb/v1.3/guides/hardware_sizing/#general-hardware-guidelines-for-a-single-node) to run reliably. 
+This number is what we use in a production instance to determine [what size hardware is needed](https://docs.influxdata.com/influxdb/v1.6/guides/hardware_sizing/#general-hardware-guidelines-for-a-single-node) to run reliably. 
 
 1. Click the Grafana logo in the upper left.
 2. Select `Dashboads`, the click `New`.
@@ -245,4 +243,4 @@ Feel free to play around adding additional graphs or types of panels if you’d 
 
 **Remember to save your dashboard!**
 ## What's Next?
-We have a few options for what to do next.  You can try “[LISA USENIX Lab 2017 - HA with InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)”, you can experiment with your existing setup and build additional graphs or dashboards, or you can explore additional ways to add data to InfluxDB. If you create something you’d like to share, see a lab coordinator for assistance merging your work into the projected rotation.
+We have a few options for what to do next.  You can try “[LISA USENIX Lab 2018 - HA with InfluxDB](https://github.com/ultramathman/lisalabs/blob/master/influxdb_ha.md)”, you can experiment with your existing setup and build additional graphs or dashboards, or you can explore additional ways to add data to InfluxDB. If you create something you’d like to share, see a lab coordinator for assistance merging your work into the projected rotation.
