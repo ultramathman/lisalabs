@@ -167,7 +167,7 @@ Salt uses the directory structure as the base for how you will eventually apply 
 
 Now edit the init.sls file and add the following configuration to install and enable the AutoFS service.
 
-``SaltStack
+```SaltStack
 rpcbind-service:
   service.running:
     - name: rpcbind
