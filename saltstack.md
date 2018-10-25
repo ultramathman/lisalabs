@@ -120,7 +120,7 @@ Salt provides several ways to target on which nodes a command or state update sh
 For now, let's start by checking the minion's availability using the "test.ping" execution module. On the salt-master VM run the following command:
 
 ```bash
- salt 'salt-minion' test.ping
+salt 'salt-minion' test.ping
 salt-minion:
     True
 ```
