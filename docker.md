@@ -1,9 +1,9 @@
 # Docker Basics
 >**Author:** Steve Anthony (sma310@lehigh.edu)
 >
->USENIX LISA Lab 2017
+>USENIX LISA Lab 2018
 >
->Feedback/Problems? Email the author or [open an issue](https://github.com/ultramathman/lisalabs17/issues)! Pull requests also welcome.
+>Feedback/Problems? Email the author or [open an issue](https://github.com/ultramathman/lisalabs/issues)! Pull requests also welcome.
 
 ----------
 **Table of Contents**
@@ -106,7 +106,7 @@ $ docker container inspect eager_lamarr
 [
     {
         "Id": "76d4eff9c4a81e8198b8cf5d04880048596569ddd6d306e750fb2a1b0175ba87",
-        "Created": "2017-10-27T15:19:33.399097647Z",
+        "Created": "2018-10-27T15:19:33.399097647Z",
         "Path": "bash",
         "Args": [],
         "State": {
@@ -118,18 +118,18 @@ Notice the container is using the `bridge` network. Note the first 13 characters
 At this point we have a Debian container running web and SSH services. However, anything we create in our webroot will be destroyed if we remove the container. To solve this, we will mount persistent storage for /var/www and serve a page there.
 
 ### Create Persistent Storage
-Storage is managed using the subcommands of `docker storage`. Use this command to create a `lisa17` volume for our data. Then use the `inspect` subcommand to get more information about our new volume.
+Storage is managed using the subcommands of `docker storage`. Use this command to create a `lisa18` volume for our data. Then use the `inspect` subcommand to get more information about our new volume.
 ```bash
-$ docker volume create lisa17
-lisa17
-$ docker volume inspect lisa17
+$ docker volume create lisa18
+lisa18
+$ docker volume inspect lisa18
 [
     {
-        "CreatedAt": "2017-10-27T11:28:05-07:00",
+        "CreatedAt": "2018-10-27T11:28:05-07:00",
         "Driver": "local",
         "Labels": {},
-        "Mountpoint": "/var/lib/docker/volumes/lisa17/_data",
-        "Name": "lisa17",
+        "Mountpoint": "/var/lib/docker/volumes/lisa18/_data",
+        "Name": "lisa18",
         "Options": {},
         "Scope": "local"
     }
@@ -147,11 +147,11 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ```
 While we're creating our new container, we also will forward ports `80` to `8080` and `22` to `2222` on the container host. In the next section, we'll from Virtual Box to the VM host.
 ```bash
-docker run -it -p 8080:80 -p 2222:22 --mount source=lisa17,destination=/var/www debian:stretch bash
+docker run -it -p 8080:80 -p 2222:22 --mount source=lisa18,destination=/var/www debian:stretch bash
 root@46ce91515e8f:/#
 ```
 
->**Note:** Since this is a new container, we'll need to update apt and install `apache2` and `openssh-server` again. Additionally install an editor, eg. `emacs25-nox` or `vim`.
+>**Note:** Since this is a new container, we'll need to update apt and install `apache2` and `openssh-server` again. Additionally install an editor, eg. `emacs-nox` or `vim`.
 
 Set a root password in the container with `passwd` and edit `/etc/ssh/sshd_config`, changing `PermitRootLogin` to `yes` so we can SSH into the container. Restart the services so the changes take effect, eg. `systemctl restart sshd`, `systemctl restart apache2`.
 
@@ -171,6 +171,4 @@ Likewise add a rule to forward port `2222` to port `2222` for SSH.
 At this point able to visit `http://localhost:8080` and see the webpage running inside our Docker container. Using an SSH client on the VM host on port `2222` we can also log into our container to make further changes. Congratulations! 
 
 ## What's Next?
-We have a few suggestions for what to do next.  You can try to reimplement “[LISA USENIX Lab 2017 - HA InfluxDB](https://github.com/ultramathman/lisalabs17/blob/master/influxdb_ha.md)” using Docker containers for the InfluxDB, influx-relay, and HAproxy instances, apply this same idea to one of the other labs, or start to investigate orchestration and management of Docker containers.
-
-If you've completed the IPv6 lab, reimplementing that in Docker is a fun puzzle and introduction to networking and IPv6 in Docker. For hints, see a person with an orange badge.
+We have a few suggestions for what to do next.  You can try to reimplement “[LISA USENIX Lab 2018 - HA InfluxDB](https://github.com/ultramathman/lisalabs/blob/master/influxdb_ha.md)” using Docker containers for the InfluxDB, influx-relay, and HAproxy instances, apply this same idea to one of the other labs, or start to investigate orchestration and management of Docker containers.
