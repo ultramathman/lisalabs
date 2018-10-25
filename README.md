@@ -48,7 +48,7 @@ The directions for this lab set are available at:
 
 - [Docker Basics](https://github.com/ultramathman/lisalabs/blob/master/docker.md)
 
-- [Saltstack for Configuration Management(https://github.com/ultramathman/lisalabs/blob/master/saltstack.md)
+- [Saltstack for Configuration Management](https://github.com/ultramathman/lisalabs/blob/master/saltstack.md)
 
 
 
