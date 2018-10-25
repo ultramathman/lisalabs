@@ -12,7 +12,7 @@
 - [Suggested Knowledge Prerequisites](#suggested-knowledge-prerequisites)
 - [Suggested Physical Prerequisites](#suggested-physical-prerequisites)
 - [Let's Begin!](#lets-begin)
-  - [Install and Configure the Salt Master](#install-and-cofigure-the-salt-master)
+  - [Install and Configure the Salt Master](#install-and-configure-the-salt-master)
   - [Install and Configure the Salt Minion](#install-and-configure-the-salt-minion)
   - [Targeting Your Minion and Running Commands](#targeting-your-minion-and-running-commands)
   - [Write a State to Install and Manage a Service](#write-a-state-to-install-and-manage-a-service)
@@ -214,7 +214,7 @@ This will apply all states in the Top file assigned to the minion with the ID "s
 ```bash
 salt 'salt-minion' state.highstate test=true
 ```
-###Modify the State to Manage a File
+### Modify the State to Manage a File
 
 Now that we have the AutoFS service installed and running, we need to modify our state to deploy files to ensure the AutoFS service is configured correctly. First create a directory in the state to store the files. This isn't required, but it makes managing more complex states easier.
 ```bash
@@ -258,7 +258,7 @@ $ cat /mnt/nfs/README.txt
 Congratulations, it works!
 ```
 
-###Salt Grains and the Pillar
+### Salt Grains and the Pillar
 
 Now we have a configuration definition to install packages, enable a service, deploy configuration files, and restart that service when those files change. We now consider another feature of Salt, useful for targeting minions and in eventually templating state definition to make them more general. The Salt grains interface provides a way for the master to query and use information about the minion system including things such as operating system, IP address, kernel, whether the minion is a virtual or physical machine, and many other properties.
 
@@ -301,7 +301,7 @@ touch /srv/pillar/top.sls
 
 We'll return to create the actual pillar data in the next section when we template our state.
 
-###Template from a Map and Override with a Pillar
+### Template from a Map and Override with a Pillar
 
 Our state file so far is fine, but inflexible. For example, if we added a CentOS minion, where the package nfs-common doesn't exist and the nfs-utils package serves the same purpose we might duplicate our state file and assign the CentOS style one to those minions and the Debian style on to other minions. Fortunately there's an easier solution. We can define a base set of variables to apply based on a grain, such as os_family, and then override those variable for edge cases using pillars.
 
@@ -349,7 +349,7 @@ autofs-service:
       - service: autofs-service
 ```
 
-###Template Your Configuration with Jinja
+### Template Your Configuration with Jinja
 
 Finally, let's create a pillar to hold our mount information for autofs and refactor our auto.nfs file so that Salt will generate it for the minion from the grains. First let's create a directory for our pillar. The pillar layout is analogous to the state tree in /srv/salt and the subsequent naming in /srv/salt/top.sls.
 
