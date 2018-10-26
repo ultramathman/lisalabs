@@ -220,8 +220,8 @@ Create a new dashboard titled `Host Performance`, and add a graph.
 
 At this point you should see lines for `total`, `used`, and `free`. Now we'll abstract these selections after defining template variables.
 
-1. Click on the gear icon at the top of the page and choose `Templating`.
-2. Click `+New` to add a new variable.
+1. Click on the gear icon at the top of the page and choose `Variables`.
+2. Click `+Add variable` to add a new variable.
 
 > Name: host
 >
