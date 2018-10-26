@@ -91,7 +91,7 @@ First we install Go and Git so we can build the influx-relay binary. We'll insta
 $ sudo mkdir -p /opt/influxdb-relay/etc
 $ sudo apt-get install golang git
 $ sudo -s
-export PATH=/opt/influxdb-relay
+export GOPATH=/opt/influxdb-relay
 go get -u github.com/influxdata/influxdb-relay
 ```
 Next create the configuration file and user account we will use to run the influx-relay service.
