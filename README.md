@@ -1,6 +1,6 @@
 # USENIX LISA Labs 2018
 ## Getting Started
-Welcome to Labs. Each of the labs has a VirtualBox VM for your conviencence. Once you've joined the `LISALABS` network, you can download the files from [our webserver](http://labs.sandclass.net/materials/steve_anthony/lisa18labs/virtualbox/).
+Welcome to Labs. Each of the labs has a VirtualBox VM for your conviencence. Once you've joined the `labs` network, you can download the files from [our webserver](http://labs.sandclass.net/materials/steve_anthony/lisa18labs/virtualbox/).
 
 >**Note:** I've had some difficulty getting port forwarding and VM/Internet connectivity working correctly with the Virtual Box OSE 4.3. I'd recommend using the Oracle packages if you encounter problems.
 
